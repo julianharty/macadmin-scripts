@@ -46,6 +46,9 @@ from distutils.version import LooseVersion
 
 
 DEFAULT_SUCATALOGS = {
+    '16': 'https://swscan.apple.com/content/catalogs/others/'
+          'index-10.12-10.11-10.10-10.9'
+          '-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog',
     '17': 'https://swscan.apple.com/content/catalogs/others/'
           'index-10.13-10.12-10.11-10.10-10.9'
           '-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog',
@@ -180,6 +183,7 @@ def get_seeding_programs():
 def get_default_catalog():
     '''Returns the default softwareupdate catalog for the current OS'''
     darwin_major = os.uname()[2].split('.')[0]
+    print ('Darwin_major' + darwin_major)
     return DEFAULT_SUCATALOGS.get(darwin_major)
 
 
